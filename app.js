@@ -5,6 +5,7 @@ var juste = [];
 var compteur = 0;
 var tailleMot;
 var tableauMot = [];
+var fausseLettre = '';
 
 
 butSecret.click(function (){
@@ -17,6 +18,7 @@ console.log(motSecret);
 		tableauMot = motSecret.split('');
 		juste.push('_');
 	}
+	$('#stage1').hide();
 
 console.log(tableauMot);
 	return motSecret;
@@ -25,6 +27,7 @@ console.log(tableauMot);
 
 
 butLettre.click(function (){
+	var trouve=false;
 	choixLettre = $('#choixLettre').val();
 
 	for (var i = 0; i< tailleMot; i++) {
@@ -32,9 +35,13 @@ butLettre.click(function (){
 		if (tableauMot[i] === choixLettre) {
 			juste[i] = tableauMot[i];
 			juste.splice(juste[i], choixLettre);
+			trouve=true;
 		}
 	}
-
+	if (!trouve) {
+		fausseLettre += choixLettre;
+		console.log(fausseLettre);
+	}
 console.log(juste);
 	return choixLettre;
 });
