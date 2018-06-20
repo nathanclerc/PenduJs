@@ -7,13 +7,18 @@
 		<title>Pendu</title>
 	</head>
 	<body>
-		<div>
+		<div id="form">
 			<div id="stage1">
-				<input type="text" name="motSecret" id="motSecret" value="Tapez un secret">
+				<h3>Choisissez un mot secret</h3>
+				<input type="text" name="motSecret" id="motSecret" class="validate" value="Tapez un secret">
 				<button id="butSecret">Valider</button>
 			</div>
 			<div>
+				<img name="pendu" id="pendu" src="images/pendu_0.jpg">
+			</div>
+			<div>
 				<select id="selectTheme">
+					<option>Thème</option>
 					<option>Cinéma</option>
 					<option>Musique</option>
 					<option>Sport</option>
@@ -26,12 +31,51 @@
 				</select>
 			</div>
 			<div>
-				<input type="text" name="choixLettre" id="choixLettre" value="Choisissez une lettres">
-				<button id="butLettre">Valider</button>
+					<table id="clavier">
+	 <tr>
+	  <td><button class="lettre">a</button></td>
+	  <td><button class="lettre">b</button></td>
+	  <td><button class="lettre">c</button></td>
+	  <td><button class="lettre">d</button></td>
+	  <td><button class="lettre">e</button></td>
+	  <td><button class="lettre">f</button></td>
+	  <td><button class="lettre">g</button></td>
+	  <td><button class="lettre">h</button></td>
+	  <td><button class="lettre">i</button></td>
+	  <td><button class="lettre">j</button></td>
+	 </tr>
+	 <tr>
+	  <td><button class="lettre">k</button></td>
+	  <td><button class="lettre">l</button></td>
+	  <td><button class="lettre">m</button></td>
+	  <td><button class="lettre">n</button></td>
+	  <td><button class="lettre">o</button></td>
+	  <td><button class="lettre">p</button></td>
+	  <td><button class="lettre">q</button></td>
+	  <td><button class="lettre">r</button></td>
+	  <td><button class="lettre">s</button></td>
+	  <td><button class="lettre">t</button></td>
+	 </tr>
+	 <tr>
+	  <td><button class="lettre">u</button></td>
+	  <td><button class="lettre">v</button></td>
+	  <td><button class="lettre">w</button></td>
+	  <td><button class="lettre">x</button></td>
+	  <td><button class="lettre">y</button></td>
+	  <td><button class="lettre">z</button></td>
+	 </tr>
+	</table>
 			</div>
 			<div>
 				<input type="text" name="propRep" id="propRep" value="Proposez un mot">
 				<button id="butMot">Valider</button>
+			</div>
+			<div id="dFaux">
+				<h1>Fausses lettres</h1>
+				<h3 id="faux"></h3>
+			</div>
+			<div>
+				<h1 id="mot"></h1>
 			</div>
 		</div>
 		<script type="text/javascript" src="app.js"></script>

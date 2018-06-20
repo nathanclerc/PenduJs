@@ -1,0 +1,15 @@
+body
+{
+    background-image: url("gagne.jpg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center top;
+}
+#button{
+	text-align: center;
+		margin-top: 22%;
+}
+button{
+	width: 20%;
+	height: 75px;
+}

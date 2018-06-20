@@ -1,0 +1,15 @@
+body
+{
+    background-image: url("pendu_9.jpg");
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center top;
+}
+#button{
+	text-align: center;
+		margin-top: 43%;
+}
+button{
+	width: 20%;
+	height: 75px;
+}

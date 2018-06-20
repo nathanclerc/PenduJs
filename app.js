@@ -1,12 +1,16 @@
 var butSecret = $('#butSecret');
-var butLettre = $('#butLettre');
+var lettre = $('.lettre');
 var butMot = $('#butMot');
-var juste = [];
+var faux = $('#faux');
+var mot = $('#mot');
+var gagner = $('#gg');
 var compteur = 0;
 var tailleMot;
 var tableauMot = [];
+var juste = [];
 var fausseLettre = '';
-
+var choixLettre = '';
+var gg = '';
 
 butSecret.click(function (){
 	motSecret = $('#motSecret').val();
@@ -21,15 +25,13 @@ console.log(motSecret);
 	$('#stage1').hide();
 
 console.log(tableauMot);
-	return motSecret;
+	$('#motSecret').val('');
 });
 
 
-
-butLettre.click(function (){
+lettre.click(function (event){
+	choixLettre = $(this).html();
 	var trouve=false;
-	choixLettre = $('#choixLettre').val();
-
 	for (var i = 0; i< tailleMot; i++) {
 
 		if (tableauMot[i] === choixLettre) {
@@ -40,9 +42,24 @@ butLettre.click(function (){
 	}
 	if (!trouve) {
 		fausseLettre += choixLettre;
-		console.log(fausseLettre);
+		compteur++;
+console.log(compteur);
+		document.images['pendu'].src="images/pendu_"+compteur+".jpg";
+		faux.html(fausseLettre);
+		if (compteur == 9) {
+		alert(motSecret);
+		document.location.href="looser.html";
+		}
 	}
-console.log(juste);
+	
+	gg = juste.toString();
+	motStr = tableauMot.toString();
+	console.log(gg);
+	if (gg === motStr) {
+		document.location.href="gg.html";
+	}
+	mot.html(juste);
+	choixLettre = '';
 	return choixLettre;
 });
 
@@ -52,9 +69,13 @@ butMot.click(function(){
 		propRep= $('#propRep').val();
 
 	if (propRep === motSecret) {
-console.log('gagné');
+		document.location.href="gg.html";
 	}
 	else{
-console.log('perdu' + motSecret);
+		alert(motSecret);
+		document.location.href="looser.html";
 	}
+	$('#propRep').val('');
 });
+$('#motSecret').val('');
+$('#propRep').val('');
