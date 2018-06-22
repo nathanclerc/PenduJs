@@ -3,7 +3,7 @@ body
     background-image: url("gagne.jpg");
     background-repeat: no-repeat;
     background-size: 50%;
-    background-position: center top;
+	background-position: center top;
 }
 #button{
 	text-align: center;

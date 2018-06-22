@@ -26,6 +26,7 @@ console.log(motSecret);
 
 console.log(tableauMot);
 	$('#motSecret').val('');
+	mot.html(juste);
 });
 
 
@@ -47,7 +48,7 @@ console.log(compteur);
 		document.images['pendu'].src="images/pendu_"+compteur+".jpg";
 		faux.html(fausseLettre);
 		if (compteur == 9) {
-		alert(motSecret);
+		alert('Le mot secret était ' + motSecret);
 		document.location.href="looser.html";
 		}
 	}
@@ -55,6 +56,7 @@ console.log(compteur);
 	gg = juste.toString();
 	motStr = tableauMot.toString();
 	console.log(gg);
+	console.log(motStr);
 	if (gg === motStr) {
 		document.location.href="gg.html";
 	}
@@ -72,7 +74,7 @@ butMot.click(function(){
 		document.location.href="gg.html";
 	}
 	else{
-		alert(motSecret);
+		alert('Le mot secret était ' + motSecret);
 		document.location.href="looser.html";
 	}
 	$('#propRep').val('');
